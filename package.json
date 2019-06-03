@@ -1,0 +1,34 @@
+{
+  "name": "puppeteer-robot",
+  "version": "0.0.1",
+  "author": "JadeYang(杨琼璞) <jeffygisgreat@gmail.com>",
+  "description": "Based on the simple robot built by Puppeteer to help automate some precise transactions.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "watcher": "onchange '**/*.md' \"src/**/**/*.{js,css,scss,vue}\" -- prettier --write {{changed}}",
+    "prettier": "prettier --write \"src/**/**/*.{js,css,scss,vue}\""
+  },
+  "dependencies": {
+    "node-schedule": "^1.3.2",
+    "puppeteer-core": "^1.17.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "printWidth": 100,
+    "proseWrap": "never"
+  },
+  "repository": "git@github.com:nicejade/puppeteer-robot.git",
+  "keywords": [
+    "puppeteer",
+    "robot"
+  ],
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "onchange": "^6.0.0",
+    "prettier": "^1.17.1"
+  }
+}
