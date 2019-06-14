@@ -30,11 +30,46 @@
   </a>
 </div>
 
+### English | [中文](https://www.jeffjade.com/2019/06/14/156-puppeteer-robot/)
+
+## Goal and Philosophy
+
+In this intelligence era of digital information, even individuals, it is necessary to use a variety of tools to create their own automated robots to help complete some precise things, so that you can save more time to learn or do more meaningful; based on the newly acquired skills, in turn, improve and perfect the automation process; thus, form a virtuous circle, persist in reciprocation, so that gain more competitiveness in this great battle, in order to achieve the life you want. The establishment of [this repository](https://github.com/nicejade/puppeteer-robot) is an initial attempt to achieve this goal.
+
+Up to now, it can do the following things:
+
+- Specify the time every day, automatically log in to [hacpai.com](https://hacpai.com/register?r=jeffjade) website, and sign in.
+
 ## Prerequisites
+
+`Puppeteer` requires at least [Node.js](https://nodejs.org/en/) v6.4.0, but the examples below use async/await which is only supported in Node v7.6.0 or greater.
+
+## Installation
+
+```bash
+# 🎉 clone the project
+git clone https://github.com/nicejade/puppeteer-robot.git your-project-name
+cd your-project-name
+
+# ➕ install dependencies & start dev
+yarn
+```
+
+In addition, you need to download `Chromium` separately (Chinese users can download it on demand according to the system in [Taobao Mirrors](https://npm.taobao.org/mirrors/chromium-browser-snapshots/)) and put it in the root directory of the project; of course, you can also modify the code to specify other locations where it is located.
 
 ## Usage
 
+>In the `src/config` directory, you need create a `secret.js` in accordance with the format of `secretSample.js` and modify the configuration (🍀️).
+
+```bash
+yarn start
+```
+
 ## Useful links
+
+- [Headless Chrome Node API](https://pptr.dev/)
+- [Awesome Puppeteer Curated List](https://github.com/transitive-bullshit/awesome-puppeteer)
+- [大前端神器安利之 Puppeteer](https://www.jeffjade.com/2017/12/17/134-kinds-of-toss-using-puppeteer/)
 
 ## Related Links
 
