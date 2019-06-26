@@ -5,6 +5,7 @@ const secretConfig = require('./../config/secret')
 
 const options = {
   headless: false,
+  // args: ['--no-sandbox'],
   executablePath: $util.getExecutablePath()
 }
 
@@ -33,15 +34,16 @@ const startCheckin = async (page, browser) => {
 }
 
 const start = async () => {
+  $console.success('🌊 Puppeteer robot start working.')
   const browser = await puppeteer.launch(options)
   const page = await browser.newPage()
   await page.goto('https://hacpai.com/login')
   await page.waitFor('#verifyHacpaiIcon')
-  $console.success('✓ Okay, Start Login...... ')
   try {
+    $console.success('✓ Okay, Start Login...... ')
     startLogin(page, browser)
   } catch (error) {
-    $console.success('Opps, Something Error: ', error)
+    $console.success('Opps, Something Error: ', error || 'null')
     await page.close()
     await browser.close()
   }
