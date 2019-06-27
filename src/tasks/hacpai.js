@@ -3,6 +3,9 @@ const $util = require('./../helper/util')
 const $console = require('./../helper/console')
 const secretConfig = require('./../config/secret')
 
+let restartCounter = 0
+let restartLimit = 6
+
 const options = {
   headless: false,
   // args: ['--no-sandbox'],
@@ -33,19 +36,29 @@ const startCheckin = async (page, browser) => {
   await browser.close()
 }
 
+const startGoto = async (page, browser) => {
+  await page.goto('https://hacpai.com/login')
+  await page.waitFor('#verifyHacpaiIcon')
+  $console.success('✓ Okay, Start Login...... ')
+  startLogin(page, browser)
+}
+
 const start = async () => {
   $console.success('🌊 Puppeteer robot start working.')
   const browser = await puppeteer.launch(options)
   const page = await browser.newPage()
-  await page.goto('https://hacpai.com/login')
-  await page.waitFor('#verifyHacpaiIcon')
   try {
-    $console.success('✓ Okay, Start Login...... ')
-    startLogin(page, browser)
+    await startGoto(page, browser)
   } catch (error) {
-    $console.success('Opps, Something Error: ', error || 'null')
+    restartCounter++
+    $console.error('Opps, Something Error: ', error || 'null')
     await page.close()
-    await browser.close()
+    if (restartCounter < restartLimit) {
+      await page.waitFor(1 * 1000)
+      await startGoto(page, browser)
+    } else {
+      await browser.close()
+    }
   }
 }
 
