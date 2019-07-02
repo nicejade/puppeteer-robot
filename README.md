@@ -38,7 +38,7 @@ In this intelligence era of digital information, even individuals, it is necessa
 
 Up to now, it can do the following things:
 
-- Specify the time every day, automatically log in to [hacpai.com](https://hacpai.com/register?r=jeffjade) website, and sign in.
+- Specify the time every day, automatically login to [hacpai.com](https://hacpai.com/register?r=jeffjade) website, and sign in.
 
 ## Prerequisites
 
@@ -53,6 +53,9 @@ cd your-project-name
 
 # ➕ install dependencies & start dev
 yarn
+
+# 🚀 Background deployment
+yarn deploy
 ```
 
 In addition, you need to download `Chromium` separately (Chinese users can download it on demand according to the system in [Taobao Mirrors](https://npm.taobao.org/mirrors/chromium-browser-snapshots/)) and put it in the root directory of the project; of course, you can also modify the code to specify other locations where it is located.
