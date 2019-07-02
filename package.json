@@ -7,7 +7,9 @@
   "scripts": {
     "start": "node src/index.js",
     "watcher": "onchange '**/*.md' \"src/**/**/*.{js,css,scss,vue}\" -- prettier --write {{changed}}",
-    "prettier": "prettier --write \"src/**/**/*.{js,css,scss,vue}\""
+    "prettier": "prettier --write \"src/**/**/*.{js,css,scss,vue}\"",
+    "deploy": "pm2 start src/index.js --name 'puppeteer-robot'",
+    "redeploy": "pm2 restart src/index.js --name 'puppeteer-robot'"
   },
   "dependencies": {
     "node-schedule": "^1.3.2",
@@ -29,6 +31,7 @@
   "devDependencies": {
     "chalk": "^2.4.2",
     "onchange": "^6.0.0",
+    "pm2": "^3.5.1",
     "prettier": "^1.17.1"
   }
 }
