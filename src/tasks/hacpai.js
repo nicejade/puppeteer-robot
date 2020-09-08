@@ -47,6 +47,9 @@ const start = async () => {
   $console.success('🌊 Puppeteer robot start working.')
   const browser = await puppeteer.launch(options)
   const page = (await browser.pages())[0]
+  await page.setUserAgent(
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36'
+  )
   try {
     await startGoto(page, browser)
   } catch (error) {
