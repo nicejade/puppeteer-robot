@@ -13,7 +13,7 @@ const options = {
 }
 
 const startLogin = async (page, browser) => {
-  await page.click('#verifyHacpaiIcon', { delay: 20 })
+  await page.click('#verifyForm', { delay: 20 })
   await page.waitFor(2 * 1000)
   await page.type('#nameOrEmail', secretConfig.hacpai.account, { delay: 20 })
   await page.type('#loginPassword', secretConfig.hacpai.password, { delay: 20 })
@@ -38,7 +38,7 @@ const startCheckin = async (page, browser) => {
 
 const startGoto = async (page, browser) => {
   await page.goto('https://hacpai.com/login')
-  await page.waitFor('#verifyHacpaiIcon')
+  await page.waitFor('#verifyForm')
   $console.success('✓ Okay, Start Login...... ')
   startLogin(page, browser)
 }
