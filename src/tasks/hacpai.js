@@ -46,7 +46,7 @@ const startGoto = async (page, browser) => {
 const start = async () => {
   $console.success('🌊 Puppeteer robot start working.')
   const browser = await puppeteer.launch(options)
-  const page = await browser.newPage()
+  const page = (await browser.pages())[0]
   try {
     await startGoto(page, browser)
   } catch (error) {
